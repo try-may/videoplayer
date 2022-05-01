@@ -15,7 +15,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
+
 private:
     Ui::MainWindow *ui;
+    qint64 playtime;
 };
 #endif // MAINWINDOW_H

@@ -700,11 +700,17 @@ release/mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		D:/Qt/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
 		D:/Qt/6.2.4/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
-		D:/Qt/6.2.4/mingw_64/include/QtWidgets/QHBoxLayout \
-		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qboxlayout.h \
+		D:/Qt/6.2.4/mingw_64/include/QtWidgets/QGridLayout \
+		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qgridlayout.h \
 		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlayout.h \
 		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qgridlayout.h \
+		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qboxlayout.h \
+		D:/Qt/6.2.4/mingw_64/include/QtWidgets/QHBoxLayout \
+		D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
+		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
+		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h \
+		D:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
 		D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMenuBar \
 		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmenubar.h \
 		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmenu.h \
@@ -736,6 +742,9 @@ release/mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		D:/Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h \
 		D:/Qt/6.2.4/mingw_64/include/QtCore/qcalendar.h \
 		D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
+		D:/Qt/6.2.4/mingw_64/include/QtCore/QTimer \
+		D:/Qt/6.2.4/mingw_64/include/QtCore/qtimer.h \
+		D:/Qt/6.2.4/mingw_64/include/QtCore/qbasictimer.h \
 		../include/libavcodec/avcodec.h \
 		../include/libavutil/samplefmt.h \
 		../include/libavutil/attributes.h \

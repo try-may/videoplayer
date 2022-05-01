@@ -5,6 +5,7 @@
 #include "QVideoWidget"
 #include "qaudiooutput.h"
 #include "QFileDialog"
+#include "QTimer"
 extern "C"{
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
@@ -44,6 +45,36 @@ MainWindow::MainWindow(QWidget *parent)
         QString path = QFileDialog::getOpenFileName(this,"选择文件","/","*.mp4 *.mp3");
         qmp->stop();
         qmp->setSource(QUrl(path));
+    });
+    connect(qmp,&QMediaPlayer::durationChanged,[=](){
+
+        playtime = qmp->duration();
+        ui->label->setText("0/"+QString::number(playtime));
+        qDebug()<<playtime;
+    });
+    qmp->setPlaybackRate(1.0);
+    static double rate=1.0;
+    connect(ui->pushButton_3,&QPushButton::clicked,[=]{
+        rate=rate-0.1;
+        qmp->setPlaybackRate(rate);
+    });
+    connect(ui->pushButton_4,&QPushButton::clicked,[=]{
+        rate=rate+0.1;
+        qmp->setPlaybackRate(rate);
+    });
+    QTimer * timer= new QTimer(this);
+    timer->start(500);
+    connect(timer,&QTimer::timeout,[=]{
+        ui->label->setText(QString::number(qmp->position())+'/'+QString::number(playtime));
+        ui->horizontalSlider->setValue(qmp->position()*100/playtime);
+    });
+    connect(ui->horizontalSlider,&QSlider::sliderReleased,[=]{
+        qmp->setPosition(ui->horizontalSlider->value()*playtime/100);
+    });
+    ui->verticalSlider->setValue(50);
+    connect(ui->verticalSlider,&QSlider::sliderMoved,[=](int position){
+        audio->setVolume(position*2);
+        qDebug()<<position;
     });
 }
 
