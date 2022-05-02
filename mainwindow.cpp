@@ -38,12 +38,20 @@ MainWindow::MainWindow(QWidget *parent)
             ui->pushButton->setText("暂停");
         }
     });
+    QTimer * timer= new QTimer(this);
+    timer->start(500);
     connect(qmp,&QMediaPlayer::sourceChanged,[=](){
-         qmp->play();
+        qmp->play();
+        timer->start();
     });
+
     connect(ui->pushButton_2,&QPushButton::clicked,[=]{
+
         QString path = QFileDialog::getOpenFileName(this,"选择文件","/","*.mp4 *.mp3");
         qmp->stop();
+        qmp->setPlaybackRate(1.0);
+        ui->horizontalSlider->setValue(0);
+        timer->stop();
         qmp->setSource(QUrl(path));
     });
     connect(qmp,&QMediaPlayer::durationChanged,[=](){
@@ -62,8 +70,7 @@ MainWindow::MainWindow(QWidget *parent)
         rate=rate+0.1;
         qmp->setPlaybackRate(rate);
     });
-    QTimer * timer= new QTimer(this);
-    timer->start(500);
+
     connect(timer,&QTimer::timeout,[=]{
         ui->label->setText(QString::number(qmp->position())+'/'+QString::number(playtime));
         ui->horizontalSlider->setValue(qmp->position()*100/playtime);
@@ -72,9 +79,9 @@ MainWindow::MainWindow(QWidget *parent)
         qmp->setPosition(ui->horizontalSlider->value()*playtime/100);
     });
     ui->verticalSlider->setValue(50);
-    connect(ui->verticalSlider,&QSlider::sliderMoved,[=](int position){
-        audio->setVolume(position*2);
-        qDebug()<<position;
+    connect(ui->verticalSlider,&QSlider::valueChanged,[=](int value){
+        audio->setVolume(value*2);
+        qDebug()<<value;
     });
 }
 
