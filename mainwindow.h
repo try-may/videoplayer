@@ -14,11 +14,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    QString timeformat(int time);
 
 
 private:
     Ui::MainWindow *ui;
     qint64 playtime;
+
 };
 #endif // MAINWINDOW_H

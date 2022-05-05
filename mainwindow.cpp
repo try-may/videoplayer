@@ -58,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         playtime = qmp->duration();
         ui->label->setText("0/"+QString::number(playtime));
-        qDebug()<<playtime;
+//        qDebug()<<playtime;
     });
     qmp->setPlaybackRate(1.0);
     static double rate=1.0;
@@ -72,21 +72,40 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     connect(timer,&QTimer::timeout,[=]{
-        ui->label->setText(QString::number(qmp->position())+'/'+QString::number(playtime));
+        ui->label->setText(timeformat(qmp->position())+'/'+timeformat(playtime));
         ui->horizontalSlider->setValue(qmp->position()*100/playtime);
+//        qDebug()<<timeformat(qmp->position());
+    });
+    connect(ui->horizontalSlider,&QSlider::sliderPressed,[=]{
+        timer->stop();
     });
     connect(ui->horizontalSlider,&QSlider::sliderReleased,[=]{
         qmp->setPosition(ui->horizontalSlider->value()*playtime/100);
+        timer->start();
     });
-    ui->verticalSlider->setValue(50);
+    ui->verticalSlider->setValue(100);
     connect(ui->verticalSlider,&QSlider::valueChanged,[=](int value){
-        audio->setVolume(value*2);
-        qDebug()<<value;
+        audio->setVolume(value);
+//        qDebug()<<value;
     });
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+QString MainWindow::timeformat(int time)
+{
+    time = time/1000;
+    QString hh = QString::number(time/3600);
+    QString mm = QString::number(time%3600/60);
+    QString ss = QString::number(time%60);
+    if(hh>="0"&&hh.length()==1)
+        hh='0'+hh;
+    if(mm>="0"&&mm.length()==1)
+        mm='0'+mm;
+    if(ss>="0"&&ss.length()==1)
+        ss='0'+ss;
+    return hh+':'+mm+':'+ss;
 }
 
