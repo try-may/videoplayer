@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>627</width>
-    <height>443</height>
+    <width>1126</width>
+    <height>551</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QVideoWidget" name="widget" native="true">
+     <widget class="MyVideoWidget" name="widget" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -35,6 +35,26 @@
        </sizepolicy>
       </property>
       <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0" colspan="2">
+        <widget class="QWidget" name="widget_4" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="MySlider" name="horizontalSlider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>00:00:00/00:00:00</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
        <item row="3" column="0">
         <widget class="QWidget" name="widget_2" native="true">
          <property name="sizePolicy">
@@ -45,14 +65,28 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="Prebtn">
+            <property name="text">
+             <string>上一曲</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Playbtn">
             <property name="text">
              <string>暂停</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="Nextbtn">
+            <property name="text">
+             <string>下一曲</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Openbtn">
             <property name="text">
              <string>打开文件</string>
             </property>
@@ -61,14 +95,21 @@
           <item>
            <widget class="QPushButton" name="pushButton_3">
             <property name="text">
-             <string>加速</string>
+             <string>减速</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="pushButton_4">
             <property name="text">
-             <string>减速</string>
+             <string>加速</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Fullscreenbtn">
+            <property name="text">
+             <string>全屏</string>
             </property>
            </widget>
           </item>
@@ -85,26 +126,6 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="0" colspan="2">
-        <widget class="QWidget" name="widget_4" native="true">
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QSlider" name="horizontalSlider">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
       </layout>
      </widget>
     </item>
@@ -115,18 +136,77 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>627</width>
+     <width>1126</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockWidget_2">
+   <property name="allowedAreas">
+    <set>Qt::RightDockWidgetArea</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <property name="elideMode">
+        <enum>Qt::ElideLeft</enum>
+       </property>
+       <widget class="QWidget" name="tab">
+        <attribute name="title">
+         <string>+新建专辑</string>
+        </attribute>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget_5" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="Addsourcebtn">
+          <property name="text">
+           <string>添加</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Delsourcebtn">
+          <property name="text">
+           <string>删除</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="ClearAllbtn">
+          <property name="text">
+           <string>清空</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QVideoWidget</class>
+   <class>MySlider</class>
+   <extends>QSlider</extends>
+   <header>myslider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyVideoWidget</class>
    <extends>QWidget</extends>
-   <header location="global">qvideowidget.h</header>
+   <header>myvideowidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -1,0 +1,11 @@
+debug/dialog.o
+debug/main.o
+debug/mainwindow.o
+debug/myslider.o
+debug/mytable.o
+debug/myvideowidget.o
+debug/moc_dialog.o
+debug/moc_mainwindow.o
+debug/moc_myslider.o
+debug/moc_mytable.o
+debug/moc_myvideowidget.o

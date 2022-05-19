@@ -1,0 +1,11 @@
+release/dialog.o
+release/main.o
+release/mainwindow.o
+release/myslider.o
+release/mytable.o
+release/myvideowidget.o
+release/moc_dialog.o
+release/moc_mainwindow.o
+release/moc_myslider.o
+release/moc_mytable.o
+release/moc_myvideowidget.o
