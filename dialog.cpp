@@ -7,6 +7,7 @@ Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
+
     ui->setupUi(this);
     connect(ui->pushButton,&QPushButton::clicked,[=]{
         path = QFileDialog::getExistingDirectory(this,"选择目录", "./", QFileDialog::ShowDirsOnly);

@@ -10,21 +10,29 @@ CONFIG += c++17
 
 SOURCES += \
     dialog.cpp \
+    dialog2.cpp \
+    infmation.cpp \
     main.cpp \
     mainwindow.cpp \
+    mybutton.cpp \
     myslider.cpp \
     mytable.cpp \
     myvideowidget.cpp
 
 HEADERS += \
     dialog.h \
+    dialog2.h \
+    infmation.h \
     mainwindow.h \
+    mybutton.h \
     myslider.h \
     mytable.h \
     myvideowidget.h
 
 FORMS += \
     dialog.ui \
+    dialog2.ui \
+    infmation.ui \
     mainwindow.ui \
     myvideowidget.ui
 
@@ -34,3 +42,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 INCLUDEPATH +="./include"
 LIBS += -L$$PWD/lib -lavutil -lavformat -lavcodec -lavdevice -lavfilter -lpostproc -lswresample -lswscale
+
+RESOURCES += \
+    res.qrc
+RC_ICONS +=\
+    ico.ico

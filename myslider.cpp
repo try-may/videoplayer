@@ -2,7 +2,7 @@
 #include <QMouseEvent>
 MySlider::MySlider(QWidget *parent):QSlider (parent)
 {
-
+    this->setMouseTracking(true);//
 }
 MySlider::~MySlider()
 {
@@ -10,6 +10,7 @@ MySlider::~MySlider()
 }
 void MySlider::mousePressEvent(QMouseEvent *ev)
 {
+    button_pressed=true;
     QSlider::mousePressEvent(ev);
     //获取当前点击位置,得到的这个鼠标坐标是相对于当前QSlider的坐标
     int currentX = ev->pos().x();
@@ -32,4 +33,15 @@ void MySlider::mouseReleaseEvent(QMouseEvent *event)
     QSlider::mouseReleaseEvent(event);
 
     emit MouseRelease();
+    button_pressed=false;
 }
+//传递信号用于视频预览
+void MySlider::mouseMoveEvent(QMouseEvent *ev){
+    QSlider::mouseMoveEvent(ev);
+    double currentX = ev->pos().x();
+    double per = currentX *1.0 /this->width();
+    double value = per*(double)(this->maximum() - this->minimum()) + (double)this->minimum();
+
+    if(value>=0&&value<=100&&button_pressed==false)  emit MySliderMouseMove(value);
+}
+

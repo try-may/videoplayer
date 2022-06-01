@@ -33,7 +33,7 @@ IDC           = idc
 IDL           = midl
 ZIP           = 
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = videoplayer_resource_res.o
 SED           = sed
 MOVE          = mv -f
 SUBTARGETS    =  \
@@ -205,7 +205,7 @@ Makefile: ../videoplayer.pro D:/Qt/6.2.4/mingw_64/mkspecs/win32-g++/qmake.conf D
 		D:/Qt/6.2.4/mingw_64/mkspecs/features/qt_config.prf \
 		D:/Qt/6.2.4/mingw_64/mkspecs/win32-g++/qmake.conf \
 		D:/Qt/6.2.4/mingw_64/mkspecs/features/spec_post.prf \
-		../../.qmake.stash \
+		.qmake.stash \
 		D:/Qt/6.2.4/mingw_64/mkspecs/features/exclusive_builds.prf \
 		D:/Qt/6.2.4/mingw_64/mkspecs/features/toolchain.prf \
 		D:/Qt/6.2.4/mingw_64/mkspecs/features/default_pre.prf \
@@ -238,7 +238,8 @@ Makefile: ../videoplayer.pro D:/Qt/6.2.4/mingw_64/mkspecs/win32-g++/qmake.conf D
 		D:/Qt/6.2.4/mingw_64/lib/Qt6Network.prl \
 		D:/Qt/6.2.4/mingw_64/lib/Qt6Core.prl \
 		D:/Qt/6.2.4/mingw_64/lib/Qt6EntryPoint.prl \
-		D:/Qt/6.2.4/mingw_64/mkspecs/features/build_pass.prf
+		D:/Qt/6.2.4/mingw_64/mkspecs/features/build_pass.prf \
+		../res.qrc
 	$(QMAKE) -o Makefile ../videoplayer.pro -spec win32-g++ CONFIG+=debug CONFIG+=qml_debug
 D:/Qt/6.2.4/mingw_64/mkspecs/features/spec_pre.prf:
 D:/Qt/6.2.4/mingw_64/mkspecs/features/device_config.prf:
@@ -375,7 +376,7 @@ D:/Qt/6.2.4/mingw_64/mkspecs/features/qt_functions.prf:
 D:/Qt/6.2.4/mingw_64/mkspecs/features/qt_config.prf:
 D:/Qt/6.2.4/mingw_64/mkspecs/win32-g++/qmake.conf:
 D:/Qt/6.2.4/mingw_64/mkspecs/features/spec_post.prf:
-../../.qmake.stash:
+.qmake.stash:
 D:/Qt/6.2.4/mingw_64/mkspecs/features/exclusive_builds.prf:
 D:/Qt/6.2.4/mingw_64/mkspecs/features/toolchain.prf:
 D:/Qt/6.2.4/mingw_64/mkspecs/features/default_pre.prf:
@@ -409,6 +410,7 @@ D:/Qt/6.2.4/mingw_64/lib/Qt6Network.prl:
 D:/Qt/6.2.4/mingw_64/lib/Qt6Core.prl:
 D:/Qt/6.2.4/mingw_64/lib/Qt6EntryPoint.prl:
 D:/Qt/6.2.4/mingw_64/mkspecs/features/build_pass.prf:
+../res.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../videoplayer.pro -spec win32-g++ CONFIG+=debug CONFIG+=qml_debug
 
@@ -419,6 +421,7 @@ all: debug-all release-all  FORCE
 clean: debug-clean release-clean  FORCE
 distclean: debug-distclean release-distclean  FORCE
 	-$(DEL_FILE) Makefile
+	-$(DEL_FILE) .qmake.stash
 
 debug-mocclean:
 	$(MAKE) -f $(MAKEFILE).Debug mocclean

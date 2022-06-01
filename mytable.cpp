@@ -12,6 +12,9 @@ MyTable::MyTable(QWidget *parent) :
     this->setEditTriggers(QAbstractItemView::NoEditTriggers);
     this->setHorizontalHeaderLabels(QStringList()<<"项目名"<<"时长");
     this->setSelectionBehavior(QAbstractItemView::SelectRows);
+    connect(this,&QTableWidget::itemChanged,this,[=](QTableWidgetItem *item){
+        item->setToolTip(item->text());
+    });
 
 }
 

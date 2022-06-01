@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1126</width>
-    <height>551</height>
+    <width>1202</width>
+    <height>609</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="MyVideoWidget" name="widget" native="true">
+     <widget class="MyVideoWidget" name="videowidget" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -29,7 +29,7 @@
     <item>
      <widget class="QWidget" name="widget_3" native="true">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
         <horstretch>0</horstretch>
         <verstretch>1</verstretch>
        </sizepolicy>
@@ -52,6 +52,16 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="Mybutton" name="playmodebtn">
+            <property name="toolTip">
+             <string>播放模式</string>
+            </property>
+            <property name="text">
+             <string>播放模式</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -65,65 +75,126 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QPushButton" name="Prebtn">
+           <widget class="Mybutton" name="Prebtn">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="mouseTracking">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>上一文件</string>
+            </property>
             <property name="text">
              <string>上一曲</string>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="Playbtn">
+           <widget class="Mybutton" name="Playbtn">
+            <property name="toolTip">
+             <string>播放/暂停</string>
+            </property>
             <property name="text">
              <string>暂停</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="Nextbtn">
+           <widget class="Mybutton" name="Nextbtn">
+            <property name="toolTip">
+             <string>下一文件</string>
+            </property>
             <property name="text">
              <string>下一曲</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="Openbtn">
+           <widget class="Mybutton" name="Openbtn">
+            <property name="toolTip">
+             <string>打开文件</string>
+            </property>
             <property name="text">
              <string>打开文件</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>115</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="Mybutton" name="volumebtn">
+            <property name="toolTip">
+             <string>音量</string>
+            </property>
             <property name="text">
-             <string>减速</string>
+             <string>音量</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_4">
-            <property name="text">
-             <string>加速</string>
+           <widget class="QSlider" name="VolumeSlider">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="Fullscreenbtn">
+           <widget class="Mybutton" name="Fullscreenbtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>全屏</string>
+            </property>
             <property name="text">
              <string>全屏</string>
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="Mybutton" name="Playlistbtn">
+            <property name="toolTip">
+             <string>播放列表</string>
+            </property>
+            <property name="text">
+             <string>播放列表</string>
+            </property>
+           </widget>
+          </item>
          </layout>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QSlider" name="verticalSlider">
-         <property name="maximum">
-          <number>100</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
         </widget>
        </item>
       </layout>
@@ -136,13 +207,69 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1126</width>
+     <width>1202</width>
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件(1)</string>
+    </property>
+    <addaction name="openfile"/>
+    <addaction name="inf"/>
+    <addaction name="close"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>观看(2)</string>
+    </property>
+    <addaction name="fullscreen"/>
+    <addaction name="separator"/>
+    <addaction name="playlist"/>
+    <addaction name="preview_switch"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>播放(3)</string>
+    </property>
+    <widget class="QMenu" name="menu_4">
+     <property name="title">
+      <string>播放速度</string>
+     </property>
+     <addaction name="normal"/>
+     <addaction name="speedup"/>
+     <addaction name="slowdown"/>
+     <addaction name="speed2x"/>
+     <addaction name="speed4x"/>
+     <addaction name="speed8x"/>
+    </widget>
+    <addaction name="play"/>
+    <addaction name="separator"/>
+    <addaction name="preplay"/>
+    <addaction name="nextplay"/>
+    <addaction name="separator"/>
+    <addaction name="menu_4"/>
+    <addaction name="minus1_frame"/>
+    <addaction name="plus1_frame"/>
+    <addaction name="minus5_frame"/>
+    <addaction name="plus5_frame"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>声音(4)</string>
+    </property>
+    <addaction name="muted"/>
+    <addaction name="separator"/>
+    <addaction name="volup"/>
+    <addaction name="voldown"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_5"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QDockWidget" name="dockWidget_2">
+  <widget class="QDockWidget" name="PlaylistWidget">
    <property name="allowedAreas">
     <set>Qt::RightDockWidgetArea</set>
    </property>
@@ -153,6 +280,9 @@
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
       <widget class="QTabWidget" name="tabWidget">
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
        <property name="currentIndex">
         <number>0</number>
        </property>
@@ -170,24 +300,52 @@
       <widget class="QWidget" name="widget_5" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QPushButton" name="Addsourcebtn">
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>添加</string>
+           <string/>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="Delsourcebtn">
-          <property name="text">
-           <string>删除</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="ClearAllbtn">
-          <property name="text">
-           <string>清空</string>
-          </property>
+         <widget class="QWidget" name="widget" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QPushButton" name="Addsourcebtn">
+             <property name="toolTip">
+              <string>添加单个或多个文件到专辑</string>
+             </property>
+             <property name="text">
+              <string>添加</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Delsourcebtn">
+             <property name="toolTip">
+              <string>删除专辑里单个文件</string>
+             </property>
+             <property name="text">
+              <string>删除</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="ClearAllbtn">
+             <property name="toolTip">
+              <string>清空专辑文件</string>
+             </property>
+             <property name="text">
+              <string>清空</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -196,6 +354,151 @@
     </layout>
    </widget>
   </widget>
+  <action name="openfile">
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="close">
+   <property name="text">
+    <string>关闭</string>
+   </property>
+  </action>
+  <action name="fullscreen">
+   <property name="text">
+    <string>全屏</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="playlist">
+   <property name="text">
+    <string>播放列表</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="play">
+   <property name="text">
+    <string>播放/暂停</string>
+   </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
+  </action>
+  <action name="preplay">
+   <property name="text">
+    <string>上一文件</string>
+   </property>
+   <property name="shortcut">
+    <string>PgUp</string>
+   </property>
+  </action>
+  <action name="nextplay">
+   <property name="text">
+    <string>下一文件</string>
+   </property>
+   <property name="shortcut">
+    <string>PgDown</string>
+   </property>
+  </action>
+  <action name="normal">
+   <property name="text">
+    <string>正常速度</string>
+   </property>
+  </action>
+  <action name="speedup">
+   <property name="text">
+    <string>加速</string>
+   </property>
+  </action>
+  <action name="slowdown">
+   <property name="text">
+    <string>减速</string>
+   </property>
+  </action>
+  <action name="muted">
+   <property name="text">
+    <string>静音</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="volup">
+   <property name="text">
+    <string>音量+</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="voldown">
+   <property name="text">
+    <string>音量-</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="speed2x">
+   <property name="text">
+    <string>2倍速</string>
+   </property>
+  </action>
+  <action name="speed4x">
+   <property name="text">
+    <string>4倍速</string>
+   </property>
+  </action>
+  <action name="speed8x">
+   <property name="text">
+    <string>8倍速</string>
+   </property>
+  </action>
+  <action name="actionzhuzhencaozuo">
+   <property name="text">
+    <string>zhuzhencaozuo</string>
+   </property>
+  </action>
+  <action name="minus1_frame">
+   <property name="text">
+    <string>上1帧</string>
+   </property>
+  </action>
+  <action name="plus1_frame">
+   <property name="text">
+    <string>下1帧</string>
+   </property>
+  </action>
+  <action name="minus5_frame">
+   <property name="text">
+    <string>上5帧</string>
+   </property>
+  </action>
+  <action name="plus5_frame">
+   <property name="text">
+    <string>下5帧</string>
+   </property>
+  </action>
+  <action name="preview_switch">
+   <property name="text">
+    <string>开启/关闭视频预览</string>
+   </property>
+  </action>
+  <action name="inf">
+   <property name="text">
+    <string>获取信息</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -208,6 +511,11 @@
    <extends>QWidget</extends>
    <header>myvideowidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Mybutton</class>
+   <extends>QPushButton</extends>
+   <header>mybutton.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
