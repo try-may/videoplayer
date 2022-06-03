@@ -21,7 +21,8 @@ extern "C"{
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
 }
-QStringList allformat = {"mp3","mp4","flac","wmv","wvx","asf","asx","wpl","wm","wmx","wmd","wmz","vob","avi","mpeg","mpg","mpe","m1v","flac"};
+QStringList allformat = {"mp3","mp4","flac","wmv","wvx","asf","asx","wpl","wm","wmx","wmd","wmz","vob","avi","mpeg","mpg","mpe","m1v"};
+QStringList audioformat = {"mp3","flac","wmv","wvx","asf","asx","wpl","wm","wmx","wmd"};
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -80,7 +81,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
     //增加专辑项目
     connect(ui->Addsourcebtn,&QPushButton::clicked,this,[=]{
-        QStringList paths = QFileDialog::getOpenFileNames(this,"选择文件","/","*.mp4 *.mp3 *.flv *.flac *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.avi *.mpeg *.mpg *.mpe *.m1v");
+        QStringList paths = QFileDialog::getOpenFileNames(this,"选择文件","/","*.mp4 *.mp3 *.flac *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.avi *.mpeg *.mpg *.mpe *.m1v");
         for(int i = 0;i<paths.size();i++)
         {
             QStringList t = paths[i].split('/');
@@ -171,6 +172,18 @@ MainWindow::MainWindow(QWidget *parent)
         m->name = nowplaypath.split('/').last();
         m->path = nowplaypath;
         playlist[1].prepend(m);
+        if(audioformat.contains(m->name.split('.').last()))
+        {
+            ui->videowidget->setVisible(false);
+            ui->label_3->setVisible(true);
+            ui->Fullscreenbtn->setEnabled(false);
+        }
+        else
+        {
+            ui->videowidget->setVisible(true);
+            ui->label_3->setVisible(false);
+            ui->Fullscreenbtn->setEnabled(true);
+        }
         qmp->play();
         timer->start(500);
 
@@ -429,7 +442,10 @@ void MainWindow::init()
     ui->tabWidget->setElideMode(Qt::ElideNone);
     this->setWindowTitle("Ciallo～(∠・ω< )⌒★");
     ui->PlaylistWidget->setWindowTitle("播放列表");
-
+    ui->videowidget->setVisible(false);
+    QPixmap *qp = new QPixmap(":/pic/resource/pic/logo.png");
+    ui->label_3->setPixmap(*qp);
+    ui->Fullscreenbtn->setEnabled(false);
     QFile fl("./resource/专辑名称.txt");
     if(fl.open(QIODevice::ReadOnly))
     {
@@ -1135,8 +1151,8 @@ void MainWindow::doJpgGet(QString srcPath,QString dstPath,QString start,bool get
     AVRational frame_rate = in_fmt->streams[video_index]->r_frame_rate;
 
     // 一帧的时间戳
-    int64_t delt = time_base.den/frame_rate.num;
-    start_pts *= time_base.den;
+    int64_t delt = (time_base.den/time_base.num)/(frame_rate.num/frame_rate.den);
+    start_pts *= time_base.den/time_base.num;
 
     /** 因为想要截取的时间处的AVPacket并不一定是I帧，所以想要正确的解码，得先找到离想要截取的时间处往前的最近的I帧
     *  开始解码，直到拿到了想要获取的时间处的AVFrame

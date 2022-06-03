@@ -62,6 +62,7 @@ public:
     QVBoxLayout *verticalLayout;
     MyVideoWidget *videowidget;
     QVBoxLayout *verticalLayout_2;
+    QLabel *label_3;
     QWidget *widget_3;
     QGridLayout *gridLayout;
     QWidget *widget_4;
@@ -167,6 +168,14 @@ public:
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
 
         verticalLayout->addWidget(videowidget);
+
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy);
+        label_3->setAlignment(Qt::AlignCenter);
+
+        verticalLayout->addWidget(label_3);
 
         widget_3 = new QWidget(centralwidget);
         widget_3->setObjectName(QString::fromUtf8("widget_3"));
@@ -447,6 +456,7 @@ public:
 #if QT_CONFIG(shortcut)
         inf->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+I", nullptr));
 #endif // QT_CONFIG(shortcut)
+        label_3->setText(QString());
         label->setText(QCoreApplication::translate("MainWindow", "00:00:00/00:00:00", nullptr));
 #if QT_CONFIG(tooltip)
         playmodebtn->setToolTip(QCoreApplication::translate("MainWindow", "\346\222\255\346\224\276\346\250\241\345\274\217", nullptr));

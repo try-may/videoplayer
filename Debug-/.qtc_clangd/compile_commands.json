@@ -9,7 +9,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -36,9 +36,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -54,9 +54,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -80,10 +80,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\dialog.cpp"
+        "F:\\Qt PROJECT\\videoplayer\\dialog.cpp"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/dialog.cpp"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/dialog.cpp"
 },
 {
     "arguments": [
@@ -95,7 +95,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -122,9 +122,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -140,9 +140,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -166,10 +166,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\dialog2.cpp"
+        "F:\\Qt PROJECT\\videoplayer\\dialog2.cpp"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/dialog2.cpp"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/dialog2.cpp"
 },
 {
     "arguments": [
@@ -181,7 +181,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -208,9 +208,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -226,9 +226,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -252,10 +252,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\infmation.cpp"
+        "F:\\Qt PROJECT\\videoplayer\\infmation.cpp"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/infmation.cpp"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/infmation.cpp"
 },
 {
     "arguments": [
@@ -267,7 +267,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -294,9 +294,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -312,9 +312,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -338,10 +338,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\main.cpp"
+        "F:\\Qt PROJECT\\videoplayer\\main.cpp"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/main.cpp"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/main.cpp"
 },
 {
     "arguments": [
@@ -353,7 +353,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -380,9 +380,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -398,9 +398,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -424,10 +424,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\mainwindow.cpp"
+        "F:\\Qt PROJECT\\videoplayer\\mainwindow.cpp"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/mainwindow.cpp"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/mainwindow.cpp"
 },
 {
     "arguments": [
@@ -439,7 +439,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -466,9 +466,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -484,9 +484,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -510,10 +510,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\mybutton.cpp"
+        "F:\\Qt PROJECT\\videoplayer\\mybutton.cpp"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/mybutton.cpp"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/mybutton.cpp"
 },
 {
     "arguments": [
@@ -525,7 +525,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -552,9 +552,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -570,9 +570,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -596,10 +596,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\myslider.cpp"
+        "F:\\Qt PROJECT\\videoplayer\\myslider.cpp"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/myslider.cpp"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/myslider.cpp"
 },
 {
     "arguments": [
@@ -611,7 +611,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -638,9 +638,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -656,9 +656,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -682,10 +682,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\mytable.cpp"
+        "F:\\Qt PROJECT\\videoplayer\\mytable.cpp"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/mytable.cpp"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/mytable.cpp"
 },
 {
     "arguments": [
@@ -697,7 +697,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -724,9 +724,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -742,9 +742,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -768,10 +768,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\myvideowidget.cpp"
+        "F:\\Qt PROJECT\\videoplayer\\myvideowidget.cpp"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/myvideowidget.cpp"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/myvideowidget.cpp"
 },
 {
     "arguments": [
@@ -783,7 +783,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -810,9 +810,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -828,9 +828,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -854,10 +854,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\dialog.h"
+        "F:\\Qt PROJECT\\videoplayer\\dialog.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/dialog.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/dialog.h"
 },
 {
     "arguments": [
@@ -869,7 +869,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -896,9 +896,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -914,9 +914,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -940,10 +940,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\dialog2.h"
+        "F:\\Qt PROJECT\\videoplayer\\dialog2.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/dialog2.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/dialog2.h"
 },
 {
     "arguments": [
@@ -955,7 +955,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -982,9 +982,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1000,9 +1000,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1026,10 +1026,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\infmation.h"
+        "F:\\Qt PROJECT\\videoplayer\\infmation.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/infmation.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/infmation.h"
 },
 {
     "arguments": [
@@ -1041,7 +1041,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1068,9 +1068,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1086,9 +1086,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1112,10 +1112,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\mainwindow.h"
+        "F:\\Qt PROJECT\\videoplayer\\mainwindow.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/mainwindow.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/mainwindow.h"
 },
 {
     "arguments": [
@@ -1127,7 +1127,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1154,9 +1154,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1172,9 +1172,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1198,10 +1198,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\mybutton.h"
+        "F:\\Qt PROJECT\\videoplayer\\mybutton.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/mybutton.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/mybutton.h"
 },
 {
     "arguments": [
@@ -1213,7 +1213,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1240,9 +1240,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1258,9 +1258,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1284,10 +1284,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\myslider.h"
+        "F:\\Qt PROJECT\\videoplayer\\myslider.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/myslider.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/myslider.h"
 },
 {
     "arguments": [
@@ -1299,7 +1299,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1326,9 +1326,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1344,9 +1344,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1370,10 +1370,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\mytable.h"
+        "F:\\Qt PROJECT\\videoplayer\\mytable.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/mytable.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/mytable.h"
 },
 {
     "arguments": [
@@ -1385,7 +1385,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1412,9 +1412,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1430,9 +1430,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1456,10 +1456,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\myvideowidget.h"
+        "F:\\Qt PROJECT\\videoplayer\\myvideowidget.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/myvideowidget.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/myvideowidget.h"
 },
 {
     "arguments": [
@@ -1471,7 +1471,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1498,9 +1498,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1516,9 +1516,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1542,10 +1542,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\Debug-\\ui_myvideowidget.h"
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\ui_mainwindow.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/Debug-/ui_myvideowidget.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/Debug-/ui_mainwindow.h"
 },
 {
     "arguments": [
@@ -1557,7 +1557,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1584,9 +1584,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1602,9 +1602,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1628,10 +1628,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\Debug-\\ui_dialog.h"
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\ui_dialog2.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/Debug-/ui_dialog.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/Debug-/ui_dialog2.h"
 },
 {
     "arguments": [
@@ -1643,7 +1643,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1670,9 +1670,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1688,9 +1688,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1714,10 +1714,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\Debug-\\ui_mainwindow.h"
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\ui_dialog.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/Debug-/ui_mainwindow.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/Debug-/ui_dialog.h"
 },
 {
     "arguments": [
@@ -1729,7 +1729,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1756,9 +1756,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1774,9 +1774,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1800,10 +1800,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\Debug-\\ui_infmation.h"
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\ui_myvideowidget.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/Debug-/ui_infmation.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/Debug-/ui_myvideowidget.h"
 },
 {
     "arguments": [
@@ -1815,7 +1815,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-nscFYD\\clang-uiheader-gvRaME",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\QtCreator-kZFrnY\\clang-uiheader-HKYqWm",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -1842,9 +1842,9 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "F:\\videoplayer_1",
+        "F:\\Qt PROJECT\\videoplayer",
         "-I",
-        "F:\\videoplayer_1\\include",
+        "F:\\Qt PROJECT\\videoplayer\\include",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -1860,9 +1860,9 @@
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\include\\QtCore",
         "-I",
-        "F:\\videoplayer_1\\Debug-\\debug",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\debug",
         "-I",
-        "F:\\videoplayer_1\\Debug-",
+        "F:\\Qt PROJECT\\videoplayer\\Debug-",
         "-I",
         "D:\\Qt\\6.2.4\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -1886,9 +1886,9 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "F:\\videoplayer_1\\Debug-\\ui_dialog2.h"
+        "F:\\Qt PROJECT\\videoplayer\\Debug-\\ui_infmation.h"
     ],
-    "directory": "F:/videoplayer_1/Debug-/.qtc_clangd",
-    "file": "F:/videoplayer_1/Debug-/ui_dialog2.h"
+    "directory": "F:/Qt PROJECT/videoplayer/Debug-/.qtc_clangd",
+    "file": "F:/Qt PROJECT/videoplayer/Debug-/ui_infmation.h"
 }
 ]

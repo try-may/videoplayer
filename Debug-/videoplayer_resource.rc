@@ -1,6 +1,6 @@
 #include <windows.h>
 
-IDI_ICON1	ICON	"F:/videoplayer_1/ico.ico"
+IDI_ICON1	ICON	"F:/Qt PROJECT/videoplayer/ico.ico"
 
 VS_VERSION_INFO VERSIONINFO
 	FILEVERSION 0,0,0,0
