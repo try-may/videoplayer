@@ -12,5 +12,7 @@
         <file>resource/pic/listplay.png</file>
         <file>resource/pic/loopplay.png</file>
         <file>resource/pic/logo.png</file>
+        <file>resource/pic/point_music.png</file>
+        <file>resource/six.qss</file>
     </qresource>
 </RCC>

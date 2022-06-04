@@ -36,7 +36,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QLineEdit *pathtext;
     QPushButton *pushButton;
-    QWidget *widget_3;
+    QWidget *widget_4;
     QHBoxLayout *horizontalLayout_2;
     QLineEdit *nametext;
     QDialogButtonBox *buttonBox;
@@ -79,17 +79,17 @@ public:
 
         formLayout->setWidget(6, QFormLayout::FieldRole, widget_2);
 
-        widget_3 = new QWidget(widget);
-        widget_3->setObjectName(QString::fromUtf8("widget_3"));
-        horizontalLayout_2 = new QHBoxLayout(widget_3);
+        widget_4 = new QWidget(widget);
+        widget_4->setObjectName(QString::fromUtf8("widget_4"));
+        horizontalLayout_2 = new QHBoxLayout(widget_4);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        nametext = new QLineEdit(widget_3);
+        nametext = new QLineEdit(widget_4);
         nametext->setObjectName(QString::fromUtf8("nametext"));
 
         horizontalLayout_2->addWidget(nametext);
 
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, widget_3);
+        formLayout->setWidget(1, QFormLayout::FieldRole, widget_4);
 
 
         verticalLayout->addWidget(widget);

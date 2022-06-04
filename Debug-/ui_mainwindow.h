@@ -192,6 +192,7 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalSlider = new MySlider(widget_4);
         horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
+        horizontalSlider->setMaximum(10000);
         horizontalSlider->setOrientation(Qt::Horizontal);
 
         horizontalLayout_2->addWidget(horizontalSlider);

@@ -23,6 +23,7 @@ HEADERS += \
     dialog.h \
     dialog2.h \
     infmation.h \
+    loadfileqss.h \
     mainwindow.h \
     mybutton.h \
     myslider.h \

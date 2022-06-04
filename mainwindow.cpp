@@ -21,8 +21,8 @@ extern "C"{
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
 }
-QStringList allformat = {"mp3","mp4","flac","wmv","wvx","asf","asx","wpl","wm","wmx","wmd","wmz","vob","avi","mpeg","mpg","mpe","m1v"};
-QStringList audioformat = {"mp3","flac","wmv","wvx","asf","asx","wpl","wm","wmx","wmd"};
+QStringList allformat = {"mp3","mp4","flac","wmv","wvx","asf","asx","wpl","wm","wmx","wmd","wmz","vob","avi","mpeg","mpg","mpe","m1v","wav"};
+QStringList audioformat = {"mp3","flac","wmv","wvx","asf","asx","wpl","wm","wmx","wmd","wav"};
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -81,7 +81,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
     //增加专辑项目
     connect(ui->Addsourcebtn,&QPushButton::clicked,this,[=]{
-        QStringList paths = QFileDialog::getOpenFileNames(this,"选择文件","/","*.mp4 *.mp3 *.flac *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.avi *.mpeg *.mpg *.mpe *.m1v");
+        QStringList paths = QFileDialog::getOpenFileNames(this,"选择文件","/","*.wav *.mp4 *.mp3 *.flac *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.avi *.mpeg *.mpg *.mpe *.m1v");
         for(int i = 0;i<paths.size();i++)
         {
             QStringList t = paths[i].split('/');
@@ -219,7 +219,7 @@ MainWindow::MainWindow(QWidget *parent)
         if(qmp->position()!=0)
         {
             ui->label->setText(timeformat(qmp->position())+'/'+timeformat(playtime));
-            ui->horizontalSlider->setValue(qmp->position()*100/playtime);
+            ui->horizontalSlider->setValue(qmp->position()*10000/playtime);
         }
         //        qDebug()<<timeformat(qmp->position());
     });
@@ -229,7 +229,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->horizontalSlider,&QSlider::sliderReleased,this,[=]{
         if(qmp->playbackState()==QMediaPlayer::PlayingState)
         {
-            qmp->setPosition(ui->horizontalSlider->value()*playtime/100);
+            qmp->setPosition(ui->horizontalSlider->value()*playtime/10000);
             timer->start();
         }
 
@@ -240,7 +240,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->horizontalSlider,&MySlider::MouseRelease,this,[=]{
         if(qmp->playbackState()==QMediaPlayer::PlayingState)
         {
-            qmp->setPosition(ui->horizontalSlider->value()*playtime/100);
+            qmp->setPosition(ui->horizontalSlider->value()*playtime/10000);
             timer->start();
         }
     });
@@ -657,7 +657,7 @@ void MainWindow::closeEvent(QCloseEvent *ev)
 
 void MainWindow::slotopenfile()
 {
-    QString path = QFileDialog::getOpenFileName(this,"选择文件","/","*.mp4 *.mp3 *.flv *.flac *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.avi *.mpeg *.mpg *.mpe *.m1v");
+    QString path = QFileDialog::getOpenFileName(this,"选择文件","/","*.wav *.mp4 *.mp3 *.flac *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.avi *.mpeg *.mpg *.mpe *.m1v");
     if(path!="")
     {
         QStringList t = path.split('/');
@@ -804,7 +804,7 @@ void MainWindow::on_minus1_frame_triggered(){
     qmp->setPosition(qmp->position()-int(zhenms));
     //设置进度条以及时间label
     ui->label->setText(timeformat(qmp->position())+'/'+timeformat(playtime));
-    ui->horizontalSlider->setValue(qmp->position()*100/playtime);
+    ui->horizontalSlider->setValue(qmp->position()*10000/playtime);
 }
 //下1帧
 void MainWindow::on_plus1_frame_triggered(){
@@ -813,7 +813,7 @@ void MainWindow::on_plus1_frame_triggered(){
     qmp->setPosition(qmp->position()+int(zhenms));
     //设置进度条以及时间label
     ui->label->setText(timeformat(qmp->position())+'/'+timeformat(playtime));
-    ui->horizontalSlider->setValue(qmp->position()*100/playtime);
+    ui->horizontalSlider->setValue(qmp->position()*10000/playtime);
 }
 //上5帧
 void MainWindow::on_minus5_frame_triggered(){
@@ -822,7 +822,7 @@ void MainWindow::on_minus5_frame_triggered(){
     qmp->setPosition(qmp->position()-int(zhenms*5.0));
     //设置进度条以及时间label
     ui->label->setText(timeformat(qmp->position())+'/'+timeformat(playtime));
-    ui->horizontalSlider->setValue(qmp->position()*100/playtime);
+    ui->horizontalSlider->setValue(qmp->position()*10000/playtime);
 }
 //下5帧
 void MainWindow::on_plus5_frame_triggered(){
@@ -831,7 +831,7 @@ void MainWindow::on_plus5_frame_triggered(){
     qmp->setPosition(qmp->position()+int(zhenms*5.0));
     //设置进度条以及时间label
     ui->label->setText(timeformat(qmp->position())+'/'+timeformat(playtime));
-    ui->horizontalSlider->setValue(qmp->position()*100/playtime);
+    ui->horizontalSlider->setValue(qmp->position()*10000/playtime);
 }
 
 //开启或者关闭视频预览
@@ -942,7 +942,7 @@ void MainWindow::MySliderSlot(double value){
     }
     QString srcPath=nowplaypath;
     QString dstPath=proPath+"/1.jpg";
-    QString start=timeformat((int)(playtime*value/100));
+    QString start=timeformat((int)(playtime*value/10000));
     qDebug()<<"start:"<<start;
     bool getMore=0;
     int num=5;

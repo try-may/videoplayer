@@ -1,0 +1,36 @@
+/*上边框*/
+QWidget#widget_3
+{
+	border-top:1px solid black;
+}
+/*圆角*/
+QPushButton#Addsourcebtn,#ClearAllbtn,#Delsourcebtn
+{
+	background-color: rgb(225, 225, 225);
+	border:2px groove gray;border-radius:10px;padding:2px 4px;border-style: outset;
+}
+QPushButton:hover#Addsourcebtn,:hover#ClearAllbtn,:hover#Delsourcebtn
+{background-color:rgb(229, 241, 251); color: black;}
+
+QPushButton:pressed#Addsourcebtn,:pressed#ClearAllbtn,:pressed#Delsourcebtn
+{background-color:rgb(204, 228, 247);border-style: inset;}
+
+
+/*进度条*/
+QSlider::add-page:Horizontal
+{
+	background-color: rgb(205,205,205);height:4px;
+}
+QSlider::sub-page:Horizontal
+{
+	background-color: rgb(255,78,78);height:4px;
+}
+QSlider::handle:Horizontal
+{
+	width:14px;border-image: url(:/pic/resource/pic/point_music.png);margin:-4 px -4px;
+}
+QSlider::groove:Horizontal
+{
+	background:rgb(0, 255, 0);height:4px;
+	border-radius:2px;    
+}
