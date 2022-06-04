@@ -41,7 +41,7 @@ void MySlider::mouseMoveEvent(QMouseEvent *ev){
     double currentX = ev->pos().x();
     double per = currentX *1.0 /this->width();
     double value = per*(double)(this->maximum() - this->minimum()) + (double)this->minimum();
-
+    value=(int) value;
     if(value>=0&&value<=10000&&button_pressed==false)  emit MySliderMouseMove(value);
 }
 

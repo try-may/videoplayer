@@ -49,7 +49,7 @@ public:
 //*******李凯捷修改
     void get_zhenlv_zhenms(QString path);
     void show_cover(QString path);
-    void doJpgGet(QString srcPath,QString dstPath,QString start,bool getMore,int num);
+    void doJpgGet(QString srcPath,QString dstPath,double start,bool getMore,double num);
 
 public slots:
     void MySliderSlot(double value);

@@ -942,7 +942,8 @@ void MainWindow::MySliderSlot(double value){
     }
     QString srcPath=nowplaypath;
     QString dstPath=proPath+"/1.jpg";
-    QString start=timeformat((int)(playtime*value/10000));
+    //QString start=timeformat((int)(playtime*value/10000));
+    double start=playtime*value/10000/1000;
     qDebug()<<"start:"<<start;
     bool getMore=0;
     int num=5;
@@ -986,7 +987,7 @@ void MainWindow::releaseSources()
     //    }
 }
 //获取指定位置视频预览图并显示在label_2上
-void MainWindow::doJpgGet(QString srcPath,QString dstPath,QString start,bool getMore,int num)
+void MainWindow::doJpgGet(QString srcPath,QString dstPath,double start,bool getMore,double num)
 {
     //    QString curFile(__FILE__);
     //    unsigned long pos = curFile.find("2-video_audio_advanced");
@@ -1001,9 +1002,10 @@ void MainWindow::doJpgGet(QString srcPath,QString dstPath,QString start,bool get
     int video_index = -1;
 
     // 要截取的时刻
-    int64_t start_pts = stoi(start.toStdString().substr(0,2))*3600;
-    start_pts += stoi(start.toStdString().substr(3,2))*60;
-    start_pts += stoi(start.toStdString().substr(6,2));
+//    int64_t start_pts = stoi(start.toStdString().substr(0,2))*3600;
+//    start_pts += stoi(start.toStdString().substr(3,2))*60;
+//    start_pts += stoi(start.toStdString().substr(6,2));
+    int64_t start_pts;
     //   qDebug()<<start.substr(0,2);
     //   qDebug()<<start.substr(3,2);
     //   qDebug()<<start.substr(6,2);
@@ -1152,7 +1154,7 @@ void MainWindow::doJpgGet(QString srcPath,QString dstPath,QString start,bool get
 
     // 一帧的时间戳
     int64_t delt = (time_base.den/time_base.num)/(frame_rate.num/frame_rate.den);
-    start_pts *= time_base.den/time_base.num;
+    start_pts =start* time_base.den/time_base.num;
 
     /** 因为想要截取的时间处的AVPacket并不一定是I帧，所以想要正确的解码，得先找到离想要截取的时间处往前的最近的I帧
     *  开始解码，直到拿到了想要获取的时间处的AVFrame
@@ -1190,7 +1192,7 @@ void MainWindow::doJpgGet(QString srcPath,QString dstPath,QString start,bool get
             static int i=0;
             delt = delt*num;
             // 取一帧帧视频并写入到文件
-            if (abs(de_frame->pts - start_pts) < delt*5.0) {
+            if (abs(de_frame->pts - start_pts) < delt*10.0) {
                 qDebug()<<("找到了这一帧");
                 // 因为源视频帧的格式和目标视频帧的格式可能不一致，所以这里需要转码
                 ret = sws_scale(sws_ctx, de_frame->data, de_frame->linesize, 0, de_frame->height, en_frame->data, en_frame->linesize);
