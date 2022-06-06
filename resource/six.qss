@@ -3,6 +3,16 @@ QWidget#widget_3
 {
 	border-top:1px solid black;
 }
+
+
+
+
+/*dock*/
+QDockWidget
+{
+    titlebar-normal-icon: url(:/pic/resource/pic/music_1.png);
+
+}
 /*圆角*/
 QPushButton#Addsourcebtn,#ClearAllbtn,#Delsourcebtn
 {

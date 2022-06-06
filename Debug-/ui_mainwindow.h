@@ -314,7 +314,9 @@ public:
         tabWidget->setElideMode(Qt::ElideLeft);
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
-        tabWidget->addTab(tab, QString());
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/pic/resource/pic/+.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabWidget->addTab(tab, icon, QString());
 
         verticalLayout_3->addWidget(tabWidget);
 
@@ -445,8 +447,8 @@ public:
         voldown->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+-", nullptr));
 #endif // QT_CONFIG(shortcut)
         speed2x->setText(QCoreApplication::translate("MainWindow", "2\345\200\215\351\200\237", nullptr));
-        speed4x->setText(QCoreApplication::translate("MainWindow", "4\345\200\215\351\200\237", nullptr));
-        speed8x->setText(QCoreApplication::translate("MainWindow", "8\345\200\215\351\200\237", nullptr));
+        speed4x->setText(QCoreApplication::translate("MainWindow", "2.5\345\200\215\351\200\237", nullptr));
+        speed8x->setText(QCoreApplication::translate("MainWindow", "3\345\200\215\351\200\237", nullptr));
         actionzhuzhencaozuo->setText(QCoreApplication::translate("MainWindow", "zhuzhencaozuo", nullptr));
         minus1_frame->setText(QCoreApplication::translate("MainWindow", "\344\270\2121\345\270\247", nullptr));
         plus1_frame->setText(QCoreApplication::translate("MainWindow", "\344\270\2131\345\270\247", nullptr));
@@ -499,7 +501,7 @@ public:
         menu_3->setTitle(QCoreApplication::translate("MainWindow", "\346\222\255\346\224\276(3)", nullptr));
         menu_4->setTitle(QCoreApplication::translate("MainWindow", "\346\222\255\346\224\276\351\200\237\345\272\246", nullptr));
         menu_5->setTitle(QCoreApplication::translate("MainWindow", "\345\243\260\351\237\263(4)", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "+\346\226\260\345\273\272\344\270\223\350\276\221", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\344\270\223\350\276\221", nullptr));
         label_2->setText(QString());
 #if QT_CONFIG(tooltip)
         Addsourcebtn->setToolTip(QCoreApplication::translate("MainWindow", "\346\267\273\345\212\240\345\215\225\344\270\252\346\210\226\345\244\232\344\270\252\346\226\207\344\273\266\345\210\260\344\270\223\350\276\221", nullptr));

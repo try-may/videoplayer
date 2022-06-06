@@ -14,5 +14,9 @@
         <file>resource/pic/logo.png</file>
         <file>resource/pic/point_music.png</file>
         <file>resource/six.qss</file>
+        <file>resource/pic/+.png</file>
+        <file>resource/pic/lb.png</file>
+        <file>resource/pic/music_1.png</file>
+        <file>resource/pic/renc.png</file>
     </qresource>
 </RCC>

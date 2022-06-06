@@ -153,18 +153,22 @@ debug/qrc_res.cpp: ../res.qrc \
 		D:/Qt/6.2.4/mingw_64/bin/rcc.exe \
 		../resource/six.qss \
 		../resource/pic/loopplay.png \
-		../resource/pic/fullscreen.png \
 		../resource/pic/playlist.png \
-		../resource/pic/listplay.png \
 		../resource/pic/nextplay.png \
-		../resource/pic/pause.png \
 		../resource/pic/preplay.png \
 		../resource/pic/logo.png \
 		../resource/pic/point_music.png \
+		../resource/pic/renc.png \
+		../resource/pic/muted.png \
+		../resource/pic/fullscreen.png \
+		../resource/pic/listplay.png \
+		../resource/pic/pause.png \
 		../resource/pic/openfile.png \
+		../resource/pic/lb.png \
+		../resource/pic/+.png \
+		../resource/pic/music_1.png \
 		../resource/pic/play.png \
-		../resource/pic/volume.png \
-		../resource/pic/muted.png
+		../resource/pic/volume.png
 	'D:\Qt\6.2.4\mingw_64\bin\rcc.exe' -name res ../res.qrc -o debug/qrc_res.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h

@@ -25,7 +25,8 @@ QMap<QString,QString> transfor = {
     {"description","描述"},
     {"creation_time","创建时间"},
     {"album_artist","专辑艺术家"},
-    {"composer","作曲人"}
+    {"composer","作曲人"},
+    {"software","软件"}
 };
 struct AVDictionary {
     int count;
@@ -57,7 +58,7 @@ infmation::infmation(QWidget *parent,QString nowpath) :
         av_strerror(re, buf, sizeof(buf) - 1);//记录错误
 
         ui->label->setVisible(true);
-        //        std::cout << "open" << path << "failed!:" << buf ;//提示错误
+//                std::cout << "open" << path << "failed!:" << buf ;//提示错误
         return;
     }
     re = avformat_find_stream_info(ic, 0);
@@ -74,7 +75,7 @@ infmation::infmation(QWidget *parent,QString nowpath) :
     //使用循环读出
     //(需要读取的数据，字段名称，前一条字段（循环时使用），参数)
     for (i = 0; i < ic->metadata->count; i++){
-        ui->tableWidget->setItem(i+2,0,new QTableWidgetItem(transfor[ic->metadata->elems[i].key]));
+        ui->tableWidget->setItem(i+2,0,new QTableWidgetItem(transfor[QString::fromUtf8(ic->metadata->elems[i].key).toLower()]));
         ui->tableWidget->setItem(i+2,1,new QTableWidgetItem(ic->metadata->elems[i].value));
         qDebug()<<ic->metadata->elems[i].key;
     }

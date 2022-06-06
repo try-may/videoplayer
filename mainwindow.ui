@@ -309,8 +309,12 @@
         <enum>Qt::ElideLeft</enum>
        </property>
        <widget class="QWidget" name="tab">
+        <attribute name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/pic/resource/pic/+.png</normaloff>:/pic/resource/pic/+.png</iconset>
+        </attribute>
         <attribute name="title">
-         <string>+新建专辑</string>
+         <string>新建专辑</string>
         </attribute>
        </widget>
       </widget>
@@ -472,12 +476,12 @@
   </action>
   <action name="speed4x">
    <property name="text">
-    <string>4倍速</string>
+    <string>2.5倍速</string>
    </property>
   </action>
   <action name="speed8x">
    <property name="text">
-    <string>8倍速</string>
+    <string>3倍速</string>
    </property>
   </action>
   <action name="actionzhuzhencaozuo">
@@ -537,6 +541,8 @@
    <header>mybutton.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

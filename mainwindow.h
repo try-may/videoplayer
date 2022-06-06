@@ -13,7 +13,7 @@
 #include <QMenu>
 #include <dialog2.h>
 #include "infmation.h"
-//******李凯捷修改
+
 extern "C" {
 #include <libavutil/avutil.h>
 #include <libavformat/avformat.h>
@@ -23,7 +23,7 @@ extern "C" {
 #include <libavutil/opt.h>
 #include <string.h>
 }
-//******李凯捷修改
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -46,7 +46,7 @@ public:
     void closeEvent(QCloseEvent *ev);
     void menuinit();
     void play();
-//*******李凯捷修改
+
     void get_zhenlv_zhenms(QString path);
     void show_cover(QString path);
     void doJpgGet(QString srcPath,QString dstPath,double start,bool getMore,double num);

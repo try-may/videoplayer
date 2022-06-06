@@ -21,16 +21,17 @@ extern "C"{
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
 }
-QStringList allformat = {"mp3","mp4","flac","wmv","wvx","asf","asx","wpl","wm","wmx","wmd","wmz","vob","avi","mpeg","mpg","mpe","m1v","wav"};
-QStringList audioformat = {"mp3","flac","wmv","wvx","asf","asx","wpl","wm","wmx","wmd","wav"};
+QStringList allformat = {"mp3","flac","wav","mp4","mkv","avi","mov","wma","wmv","wvx","asf","asx","wpl","wm","wmx","wmd","wmz","vob","mpeg","mpg","mpe","m1v"};
+QStringList audioformat = {"mp3","flac","wav","wma","wmv","wvx","asf","asx","wpl","wm","wmx","wmd"};
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    //初始化
+    //初始化（包括ui，ui的交互和文件的读取）
     init();
+    //全屏按钮
     connect(ui->Fullscreenbtn,&QPushButton::clicked,this,[=]{
         ui->videowidget->setFullScreen(true);
     });
@@ -44,9 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
         else
         {
             ui->PlaylistWidget->hide();
-
         }
-
     });
     //新建专辑
     connect(addwidget->ui->buttonBox,&QDialogButtonBox::accepted,this,[=]{
@@ -66,7 +65,7 @@ MainWindow::MainWindow(QWidget *parent)
             {
 
                 int row = pltable[now_tab]->row(items[i]);
-                if(row==-1)
+                if(row==-1||(now_tab==nowplaytab&&nowplayrow==row))
                     continue;
                 if(row<=nowplayrow&&now_tab==nowplaytab)
                 {
@@ -81,7 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
     //增加专辑项目
     connect(ui->Addsourcebtn,&QPushButton::clicked,this,[=]{
-        QStringList paths = QFileDialog::getOpenFileNames(this,"选择文件","/","*.wav *.mp4 *.mp3 *.flac *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.avi *.mpeg *.mpg *.mpe *.m1v");
+        QStringList paths = QFileDialog::getOpenFileNames(this,"选择文件","/","*.wav *.mp4 *.mp3 *.wma *.avi *.mov *.flac *mkv *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.mpeg *.mpg *.mpe *.m1v");
         for(int i = 0;i<paths.size();i++)
         {
             QStringList t = paths[i].split('/');
@@ -95,9 +94,17 @@ MainWindow::MainWindow(QWidget *parent)
     });
     //清空专辑
     connect(ui->ClearAllbtn,&QPushButton::clicked,this,[=]{
-        playlist[now_tab].clear();
-        pltable[now_tab]->clearContents();
-        pltable[now_tab]->setRowCount(0);
+        if(now_tab==nowplaytab)
+        {
+            ui->statusbar->showMessage("当前专辑为播放专辑，不可清空",10000);
+        }
+        else
+        {
+            playlist[now_tab].clear();
+            pltable[now_tab]->clearContents();
+            pltable[now_tab]->setRowCount(0);
+        }
+
     });
 
 //    qDebug()<<avcodec_configuration()<<Qt::endl;
@@ -110,7 +117,7 @@ MainWindow::MainWindow(QWidget *parent)
     timer= new QTimer(this);
     qmp->setLoops(1);
     ui->playmodebtn->setpic(":/pic/resource/pic/listplay.png");
-    //播放与暂停
+        //播放与暂停
     connect(ui->Playbtn,&QPushButton::clicked,this,[=](){
         if(qmp->source()==QUrl("")&&!playlist[0].empty())
         {
@@ -122,7 +129,7 @@ MainWindow::MainWindow(QWidget *parent)
         else if(qmp->source()!=QUrl(""))
             play();
     });
-    //播放状态改变
+        //播放状态改变
     connect(qmp,&QMediaPlayer::playbackStateChanged,this,[=](QMediaPlayer::PlaybackState newState){
 //        qDebug()<<newState;
         if(newState==QMediaPlayer::PlayingState)
@@ -131,7 +138,7 @@ MainWindow::MainWindow(QWidget *parent)
         {
             ui->Playbtn->setpic(":/pic/resource/pic/play.png");
 
-            if(newState==QMediaPlayer::StoppedState&&qmp->position()==playtime&&qmp->loops()==1)
+            if(newState==QMediaPlayer::StoppedState&&qmp->position()>=playtime&&qmp->loops()==1)
             {
                 nowplayrow=(nowplayrow+1)%playlist[nowplaytab].size();
                 nowplaypath = playlist[nowplaytab][nowplayrow]->path;
@@ -149,15 +156,15 @@ MainWindow::MainWindow(QWidget *parent)
         //            qDebug()<<data.keys()[i];
         //            qDebug()<<data.stringValue(data.keys()[i]);
         //        }
-        //*******李凯捷修改
+
         get_zhenlv_zhenms(nowplaypath);   //更改zhenlv zhenms为当前视频对应值
 //        qDebug()<<"zhenlv:"<<zhenlv;
 //        qDebug()<<"zhenms:"<<zhenms;
         show_cover(nowplaypath);          //在label_2显示音频对应专辑封面
-        //*******李凯捷修改
+
 
     });
-    //换源信号
+        //换源信号
     connect(qmp,&QMediaPlayer::sourceChanged,this,[=](){
         this->setWindowTitle(playlist[nowplaytab][nowplayrow]->path);
         removesource(nowplaypath,1);
@@ -188,7 +195,7 @@ MainWindow::MainWindow(QWidget *parent)
         timer->start(500);
 
     });
-    //上下曲
+        //上下曲
     connect(ui->Nextbtn,&QPushButton::clicked,this,[=](){
         pltable[nowplaytab]->clearSelection();
         nowplayrow=(nowplayrow+1)%playlist[nowplaytab].size();
@@ -212,7 +219,7 @@ MainWindow::MainWindow(QWidget *parent)
         if(playtime!=0)
             pltable[1]->setItem(0,1,new QTableWidgetItem(timeformat(playtime)));
     });
-    //倍速
+    //倍速，执行exe后只执行一次
     qmp->setPlaybackRate(1.0);
     //进度条相关
     connect(timer,&QTimer::timeout,this,[=]{
@@ -223,9 +230,11 @@ MainWindow::MainWindow(QWidget *parent)
         }
         //        qDebug()<<timeformat(qmp->position());
     });
+        //拖动进度条
     connect(ui->horizontalSlider,&QSlider::sliderPressed,this,[=]{
         timer->stop();
     });
+        //松开进度条
     connect(ui->horizontalSlider,&QSlider::sliderReleased,this,[=]{
         if(qmp->playbackState()==QMediaPlayer::PlayingState)
         {
@@ -234,9 +243,11 @@ MainWindow::MainWindow(QWidget *parent)
         }
 
     });
+        //鼠标按压进度条
     connect(ui->horizontalSlider,&MySlider::MousePress,this,[=]{
         timer->stop();
     });
+        //鼠标松开进度条
     connect(ui->horizontalSlider,&MySlider::MouseRelease,this,[=]{
         if(qmp->playbackState()==QMediaPlayer::PlayingState)
         {
@@ -247,11 +258,13 @@ MainWindow::MainWindow(QWidget *parent)
     //音量控制
     ui->VolumeSlider->setValue(50);
     ui->VolumeSlider->setToolTip("50");
+        //设置初始音量
     connect(ui->VolumeSlider,&QSlider::valueChanged,this,[=](int value){
         float volume = value;
         audio->setVolume(volume/100);
         ui->VolumeSlider->setToolTip(QString::number(value));
     });
+        //静音
     connect(ui->volumebtn,&QPushButton::clicked,this,[=](){
         if(!audio->isMuted())
         {
@@ -277,14 +290,15 @@ MainWindow::MainWindow(QWidget *parent)
             ui->playmodebtn->setpic(":/pic/resource/pic/listplay.png");
         }
     });
-    //视频缩略图信号  *******李凯捷修改*******
+    //视频缩略图信号
     connect(ui->horizontalSlider,SIGNAL(MySliderMouseMove(double)),this,SLOT(MySliderSlot(double)));
 }
-
+//销毁MainWindow窗口(析构函数)
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+//播放时间格式化为 小时：分钟：秒 （1小时2分3秒-》01:02:03）
 QString MainWindow::timeformat(int time)
 {
     time = time/1000;
@@ -299,6 +313,7 @@ QString MainWindow::timeformat(int time)
         ss='0'+ss;
     return hh+':'+mm+':'+ss;
 }
+//删除同一专辑内的同名文件
 void MainWindow::removesource(QString path,int i)
 {
     for(int j=0;j<playlist[i].size();j++)
@@ -311,6 +326,7 @@ void MainWindow::removesource(QString path,int i)
         }
     }
 }
+//初始化
 void MainWindow::init()
 {
     addwidget=new Dialog;
@@ -329,8 +345,9 @@ void MainWindow::init()
     listmenu.addAction(editfile);
     listmenu.addAction(editname);
     listmenu.addAction(deltab);
+    //文件改名
+        //调出改名窗口
     connect(editfile,&QAction::triggered,this,[=]{
-        //待修改
         QList<QTableWidgetItem*> items = pltable[now_tab]->selectedItems();
         for(int i=0;i<items.size();i++)
         {
@@ -364,6 +381,7 @@ void MainWindow::init()
             }
         }
     });
+        //改名逻辑
     connect(editfilewidget->ui->buttonBox,&QDialogButtonBox::accepted,this,[=]{
         //待修改
         if(editfilewidget->ui->lineEdit->text()=="")
@@ -384,6 +402,9 @@ void MainWindow::init()
         }
 
     });
+
+    //专辑改名
+        //调出改名窗口
     connect(editname,&QAction::triggered,this,[=]{
         if(now_tab==1||now_tab==0)
         {
@@ -396,6 +417,7 @@ void MainWindow::init()
         }
 
     });
+        //改名逻辑
     connect(edittabwidget->ui->buttonBox,&QDialogButtonBox::accepted,this,[=]{
         if(edittabwidget->ui->lineEdit->text()=="")
             ui->statusbar->showMessage("命名为空",10000);
@@ -407,6 +429,9 @@ void MainWindow::init()
             tabname[now_tab]=edittabwidget->ui->lineEdit->text();
         }
     });
+
+    //删除专辑
+        //判断能否删除
     connect(deltab,&QAction::triggered,this,[=]{
         if(now_tab==1||now_tab==0)
         {
@@ -434,19 +459,34 @@ void MainWindow::init()
         }
 
     });
+
+    //定位当前播放歌曲所在位置
     connect(location,&QAction::triggered,this,[=]{
-        ui->tabWidget->setCurrentIndex(nowplaytab);
-        pltable[nowplaytab]->clearSelection();
-        pltable[nowplaytab]->selectRow(nowplayrow);
+        if(nowplaytab==1)
+        {
+            ui->tabWidget->setCurrentIndex(nowplaytab);
+            pltable[nowplaytab]->clearSelection();
+            pltable[nowplaytab]->selectRow(1);
+        }
+        else
+        {
+            ui->tabWidget->setCurrentIndex(nowplaytab);
+            pltable[nowplaytab]->clearSelection();
+            pltable[nowplaytab]->selectRow(nowplayrow);
+        }
+
     });
-    ui->tabWidget->setElideMode(Qt::ElideNone);
-    this->setWindowTitle("Ciallo～(∠・ω< )⌒★");
-    ui->PlaylistWidget->setWindowTitle("播放列表");
-    ui->videowidget->setVisible(false);
-    QPixmap *qp = new QPixmap(":/pic/resource/pic/logo.png");
+
+    ui->tabWidget->setElideMode(Qt::ElideNone);              //设置专辑ui
+    this->setWindowTitle("Ciallo～(∠・ω< )⌒★");             //设置标题
+    ui->PlaylistWidget->setWindowTitle("播放列表");           //设置播放列表窗口标题
+    ui->videowidget->setVisible(false);                      //隐藏播放界面
+    QPixmap *qp = new QPixmap(":/pic/resource/pic/logo.png");//设置logo
     ui->label_3->setPixmap(*qp);
-    ui->Fullscreenbtn->setEnabled(false);
+    ui->Fullscreenbtn->setEnabled(false);                    //禁用全屏按钮
     QFile fl("./resource/专辑名称.txt");
+
+    //读入专辑信息
     if(fl.open(QIODevice::ReadOnly))
     {
         QTextStream t(&fl);
@@ -458,7 +498,6 @@ void MainWindow::init()
         }
     }
     fl.close();
-
     for(int i = 0;i<tabname.size();i++)
     {
         QString path = "./resource/"+tabname[i]+".txt";
@@ -498,6 +537,7 @@ void MainWindow::init()
             item->setToolTip(item->text());
         });
         table->setContextMenuPolicy(Qt::CustomContextMenu);
+        table->setStyleSheet("background-color:rgb(245,245,245);");
         connect(table,&QWidget::customContextMenuRequested,[=](){
             listmenu.exec(QCursor::pos());
         });
@@ -508,11 +548,19 @@ void MainWindow::init()
             pltable[i]->setItem(j,0,new QTableWidgetItem(playlist[i][j]->name));
         }
     }
+
+    //初始化ui
+    QPixmap pic1(":/pic/resource/pic/lb.png");
+    QPixmap pic2(":/pic/resource/pic/renc.png");
+    ui->tabWidget->setTabIcon(0,pic1);
+    ui->tabWidget->setTabIcon(1,pic2);
+
+    //新建专辑按钮
     ui->tabWidget->setCurrentIndex(now_tab);
     connect(ui->tabWidget,&QTabWidget::tabBarClicked,this,[=](int index){
         if(index==ui->tabWidget->count()-1)
         {
-            addwidget->show();
+            addwidget->exec();
         }
     });
 
@@ -525,9 +573,7 @@ void MainWindow::init()
             now_tab = ui->tabWidget->currentIndex();
 
     });
-
-
-    //按钮设置
+    //按钮图片设置
     ui->Prebtn->setpic(":/pic/resource/pic/preplay.png");
     ui->Playbtn->setpic(":/pic/resource/pic/play.png");
     ui->Nextbtn->setpic(":/pic/resource/pic/nextplay.png");
@@ -536,24 +582,18 @@ void MainWindow::init()
     ui->Fullscreenbtn->setpic(":/pic/resource/pic/fullscreen.png");
     ui->Playlistbtn->setpic(":/pic/resource/pic/playlist.png");
 
-    //快捷键设置  *******李凯捷修改*******
-//    ui->Playbtn->setShortcut(QKeySequence("Space"));
-//    ui->Fullscreenbtn->setShortcut(QKeySequence("Ctrl+F"));
-//    ui->Playlistbtn->setShortcut(QKeySequence("Ctrl+I"));
-//    ui->Prebtn->setShortcut(QKeySequence("Ctrl+Left"));
-//    ui->Nextbtn->setShortcut(QKeySequence("Ctrl+Right"));
-//    ui->volup->setShortcut(QKeySequence("Ctrl+Up"));
-//    ui->voldown->setShortcut(QKeySequence("Ctrl+Down"));
+    //快捷键设置
     ui->minus1_frame->setShortcut(QKeySequence("Ctrl+1"));
     ui->plus1_frame->setShortcut(QKeySequence("Ctrl+2"));
     ui->minus5_frame->setShortcut(QKeySequence("Ctrl+5"));
     ui->plus5_frame->setShortcut(QKeySequence("Ctrl+6"));
 }
+//新建专辑
 void MainWindow::newtab()
 {
-    QDir dir(addwidget->path);
+    QDir dir(addwidget->ui->pathtext->text());
     QString name = addwidget->ui->nametext->text();
-    if (!dir.exists()&&name!="") {
+    if (name=="") {
         ui->statusbar->showMessage("名字不能为空！",10000);
     }
     else
@@ -590,6 +630,7 @@ void MainWindow::newtab()
 
             changesource(playlist[now_tab][row]->path);
         });
+        table->setStyleSheet("background-color:rgb(245,245,245);");
         table->setContextMenuPolicy(Qt::CustomContextMenu);
         connect(table,&QWidget::customContextMenuRequested,this,[=](){
             listmenu.exec(QCursor::pos());
@@ -601,6 +642,7 @@ void MainWindow::newtab()
         }
     }
 }
+//切换播放源
 void MainWindow::changesource(QString path)
 {
     if(!QFile::exists(path))
@@ -623,7 +665,7 @@ void MainWindow::changesource(QString path)
 
 
 }
-
+//程序退出事件（保留专辑信息）
 void MainWindow::closeEvent(QCloseEvent *ev)
 {
     QFile f;
@@ -654,10 +696,10 @@ void MainWindow::closeEvent(QCloseEvent *ev)
     }
     QWidget::closeEvent(ev);
 }
-
+//打开文件
 void MainWindow::slotopenfile()
 {
-    QString path = QFileDialog::getOpenFileName(this,"选择文件","/","*.wav *.mp4 *.mp3 *.flac *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.avi *.mpeg *.mpg *.mpe *.m1v");
+    QString path = QFileDialog::getOpenFileName(this,"选择文件","/","*.mkv *.wav *.mp4 *.mp3 *.wma *.flac *.mov *.avi *.wmv *.wvx *.asf *.wm *.wmx *.wmz *.vob *.avi *.mpeg *.mpg *.mpe *.m1v");
     if(path!="")
     {
         QStringList t = path.split('/');
@@ -673,6 +715,7 @@ void MainWindow::slotopenfile()
         changesource(path);
     }
 }
+//播放控制
 void MainWindow::play()
 {
     if(qmp->playbackState()==QMediaPlayer::PlayingState)
@@ -689,6 +732,7 @@ void MainWindow::play()
     }
 }
 
+//菜单栏按钮设置
 void MainWindow::on_openfile_triggered()
 {
     slotopenfile();
@@ -703,18 +747,18 @@ void MainWindow::on_close_triggered()
 
 void MainWindow::on_fullscreen_triggered()
 {
-    ui->videowidget->setFullScreen(true);
+    ui->Fullscreenbtn->click();
 
 }
 
-
+    //播放列表展示、隐藏
 void MainWindow::on_playlist_triggered()
 {
     if(ui->PlaylistWidget->isHidden())
         ui->PlaylistWidget->show();
 }
 
-
+    //播放控制
 void MainWindow::on_play_triggered()
 {
     ui->Playbtn->click();
@@ -732,12 +776,13 @@ void MainWindow::on_nextplay_triggered()
     ui->Nextbtn->click();
 }
 
-
+    //设置正常倍速
 void MainWindow::on_normal_triggered()
 {
     qmp->setPlaybackRate(1.0);
     ui->statusbar->showMessage("当前为正常倍速",5000);
 }
+    //获取文件信息（进阶功能）
 void MainWindow::on_inf_triggered()
 {
     //    const char* path = nowplaypath.toLatin1();
@@ -769,35 +814,33 @@ void MainWindow::on_inf_triggered()
     setFocusPolicy(Qt::NoFocus);
     inf.exec();
 }
-
+    //以0.1倍速为单位调整倍速
 void MainWindow::on_speedup_triggered()
 {
-    qmp->setPlaybackRate(std::min(8.0,qmp->playbackRate()+0.1));
+    qmp->setPlaybackRate(std::min(3.0,qmp->playbackRate()+0.1));
     ui->statusbar->showMessage("当前倍速为:"+QString::number(qmp->playbackRate()),5000);
 }
-
-
 void MainWindow::on_slowdown_triggered()
 {
     qmp->setPlaybackRate(std::max(qmp->playbackRate()-0.1,0.5));
     ui->statusbar->showMessage("当前倍速为:"+QString::number(qmp->playbackRate()),5000);
 }
-//248倍速
+    //2、2.5、3.0倍速
 void MainWindow::on_speed2x_triggered(){
     qmp->setPlaybackRate(2.0);
     ui->statusbar->showMessage("当前倍速为:"+QString::number(qmp->playbackRate()),5000);
 }
 void MainWindow::on_speed4x_triggered(){
-    qmp->setPlaybackRate(4.0);
+    qmp->setPlaybackRate(2.5);
     ui->statusbar->showMessage("当前倍速为:"+QString::number(qmp->playbackRate()),5000);
 }
 void MainWindow::on_speed8x_triggered(){
-    qmp->setPlaybackRate(8.0);
+    qmp->setPlaybackRate(3.0);
     ui->statusbar->showMessage("当前倍速为:"+QString::number(qmp->playbackRate()),5000);
 }
 
 //逐帧操作
-//上1帧
+    //上1帧
 void MainWindow::on_minus1_frame_triggered(){
     if(qmp->position()-int(zhenms)<=0) return;                      //如果超出进度条则返回
     if(qmp->playbackState()==QMediaPlayer::PlayingState) play();
@@ -806,7 +849,7 @@ void MainWindow::on_minus1_frame_triggered(){
     ui->label->setText(timeformat(qmp->position())+'/'+timeformat(playtime));
     ui->horizontalSlider->setValue(qmp->position()*10000/playtime);
 }
-//下1帧
+    //下1帧
 void MainWindow::on_plus1_frame_triggered(){
     if(qmp->position()+int(zhenms)>=qmp->duration()) return;        //如果超出进度条则返回
     if(qmp->playbackState()==QMediaPlayer::PlayingState) play();
@@ -815,7 +858,7 @@ void MainWindow::on_plus1_frame_triggered(){
     ui->label->setText(timeformat(qmp->position())+'/'+timeformat(playtime));
     ui->horizontalSlider->setValue(qmp->position()*10000/playtime);
 }
-//上5帧
+    //上5帧
 void MainWindow::on_minus5_frame_triggered(){
     if(qmp->position()-int(zhenms*5.0)<=0) return;                  //如果超出进度条则返回
     if(qmp->playbackState()==QMediaPlayer::PlayingState) play();
@@ -824,7 +867,7 @@ void MainWindow::on_minus5_frame_triggered(){
     ui->label->setText(timeformat(qmp->position())+'/'+timeformat(playtime));
     ui->horizontalSlider->setValue(qmp->position()*10000/playtime);
 }
-//下5帧
+    //下5帧
 void MainWindow::on_plus5_frame_triggered(){
     if(qmp->position()+int(zhenms*5.0)>=qmp->duration()) return;    //如果超出进度条则返回
     if(qmp->playbackState()==QMediaPlayer::PlayingState) play();
@@ -847,15 +890,20 @@ void MainWindow::on_preview_switch_triggered(){
         return;
     }
 }
-
+//音量控制
 void MainWindow::on_muted_triggered()
 {
     if(!audio->isMuted())
+    {
         audio->setMuted(true);
+        ui->volumebtn->setpic(":/pic/resource/pic/muted.png");
+    }
     else
+    {
         audio->setMuted(false);
+        ui->volumebtn->setpic(":/pic/resource/pic/volume.png");
+    }
 }
-
 
 void MainWindow::on_volup_triggered()
 {
@@ -863,14 +911,13 @@ void MainWindow::on_volup_triggered()
     ui->VolumeSlider->setValue(audio->volume()*100);
 }
 
-
 void MainWindow::on_voldown_triggered()
 {
     audio->setVolume(audio->volume()-0.1);
     ui->VolumeSlider->setValue(audio->volume()*100);
 }
-
-//获得视频帧率和一帧对应毫秒数
+//需要调用ffmpeg库的函数（进阶功能）
+    //获得视频帧率和一帧对应毫秒数
 void MainWindow::get_zhenlv_zhenms(QString path){  //获得视频帧率和一帧对应毫秒数
     int ret = 0;
     AVFormatContext *format_ctx = avformat_alloc_context();
@@ -889,9 +936,9 @@ void MainWindow::get_zhenlv_zhenms(QString path){  //获得视频帧率和一帧
     //qDebug()<<zhenlv;
     //qDebug()<<zhenms;
 }
-//显示音乐专辑封面
+    //显示音乐专辑封面
 void MainWindow::show_cover(QString path){
-    if(path.right(4)==".mp3"||path.right(5)==".flac"){
+    if(audioformat.contains(path.split('.').last())){
         //读取metadata
         AVFormatContext *fmt_ctx = NULL;
         AVDictionaryEntry *tag = NULL;
@@ -925,12 +972,13 @@ void MainWindow::show_cover(QString path){
         ui->label_2->setPixmap(QPixmap::fromImage(img.scaled(ui->label_2->size())));  //将图片缩放至label_2大小并在label_2显示
     }
 }
-//鼠标对应位置视频缩略图
+    //鼠标对应位置视频缩略图
 void MainWindow::MySliderSlot(double value){
     if(preview_on==false) return;
     if(nowplaypath.isEmpty()) return;
     if(value-(int)value>0.2) return;
-    if(nowplaypath.right(4)!=".mp4") return;
+//    if(nowplaypath.right(4)!=".mp4") return;
+    if(audioformat.contains(nowplaypath.split('.').last())) return;
     //if(de_ctx!=NULL) return;
     qDebug()<<value;
     QString proPath=QDir::currentPath();
@@ -950,7 +998,7 @@ void MainWindow::MySliderSlot(double value){
     if(sws_ctx==NULL||de_frame==NULL||en_frame==NULL||in_fmt==NULL||ou_fmt==NULL||de_ctx==NULL||en_ctx==NULL)
         doJpgGet(srcPath,dstPath,start,getMore,num);
 }
-//释放视频预览用到的资源
+    //释放视频预览用到的资源
 void MainWindow::releaseSources()
 {
     if (in_fmt) {
@@ -986,7 +1034,7 @@ void MainWindow::releaseSources()
     //        sws_ctx = NULL;
     //    }
 }
-//获取指定位置视频预览图并显示在label_2上
+    //获取指定位置视频预览图并显示在label_2上
 void MainWindow::doJpgGet(QString srcPath,QString dstPath,double start,bool getMore,double num)
 {
     //    QString curFile(__FILE__);
@@ -1168,15 +1216,17 @@ void MainWindow::doJpgGet(QString srcPath,QString dstPath,double start,bool getM
     }
 
     bool found = false;
+    //读取视频流
     while (av_read_frame(in_fmt, in_pkt) == 0) {
 
         if (in_pkt->stream_index != video_index) {
             continue;
         }
 
-        // 先解码
+        // 发送视频流packet数据
         avcodec_send_packet(de_ctx, in_pkt);
-        //qDebug()<<("video pts %d(%s)",in_pkt->pts,av_ts2timestr(in_pkt->pts,&in_stream->time_base));
+
+        //解码后找到指定帧-》转码-》编码得到packet；packet中的数据即为视频缩略图
         while (true) {
 
             int ret = avcodec_receive_frame(de_ctx, de_frame);
@@ -1192,7 +1242,7 @@ void MainWindow::doJpgGet(QString srcPath,QString dstPath,double start,bool getM
             static int i=0;
             delt = delt*num;
             // 取一帧帧视频并写入到文件
-            if (abs(de_frame->pts - start_pts) < delt*10.0) {
+            if (abs(de_frame->pts - start_pts) < delt*0.5) {
                 qDebug()<<("找到了这一帧");
                 // 因为源视频帧的格式和目标视频帧的格式可能不一致，所以这里需要转码
                 ret = sws_scale(sws_ctx, de_frame->data, de_frame->linesize, 0, de_frame->height, en_frame->data, en_frame->linesize);
@@ -1245,7 +1295,7 @@ void MainWindow::doJpgGet(QString srcPath,QString dstPath,double start,bool getM
         }
 
     }
-
+    //获取到图片，显示在界面指定位置
     QImage img=QImage::fromData((uchar*)ou_pkt->data,ou_pkt->size);
     ui->label_2->setPixmap(QPixmap::fromImage(img.scaled(ui->label_2->size())));
     // 释放资源
